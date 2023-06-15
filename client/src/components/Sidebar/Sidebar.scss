@@ -1,0 +1,74 @@
+.sidebar{
+    flex:3;
+    margin:1.25rem;
+    padding-bottom: 1.875rem;
+    background-color: #fdfbfb;
+    border-radius: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .sidebarItem{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .sidebarTitle{
+            margin:0.625rem;
+            padding:0.3125rem;
+            width: 80%;
+            border-top: 1px solid #a7a4a4;
+            border-bottom: 1px solid #a7a4a4;
+            font-family: 'Valera Round', sans-serif;
+            font-size: 0.75rem;
+            color:#222;
+            font-weight: 600;
+            line-height: 1.25rem;
+            text-align: center;
+        }
+        img{
+            margin-top: 0.9375rem;
+            width: 80%;
+        }
+        p{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: justify;
+            width: 80%;
+            line-height: 1.5rem;
+            
+        }
+        .sidebarList{
+            list-style-type: none;
+            margin-bottom: 1.875rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding:0;
+            .sidebarListItem{
+                flex:50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 0.9375rem;
+                cursor: pointer;
+            }
+        }
+        .sidebarSocial{
+            margin-top: 0.9375rem;
+            width:15.625rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            i{
+                font-size: 1.5rem;
+                cursor: pointer;
+                color:#666;
+            }
+        }
+
+    }
+}

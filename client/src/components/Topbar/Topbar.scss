@@ -1,0 +1,66 @@
+.topBar{
+    display: flex;
+    align-items: center;
+    width:100%;
+    height: 3.125rem;
+    background-color: #fafdfe ;
+    position:sticky;
+    top:0;
+    font-family: 'Josefin Sans', sans-serif;
+    z-index:9;
+    .topLeft{
+        flex:3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .topIcon{
+            font-size: 1.4rem;
+            margin-right:0.625rem;
+            cursor: pointer!important;
+            color:#444;
+        }
+    }
+    .topCenter{
+        flex:6;
+        .topList{
+            display: flex;
+            justify-content: center;
+            margin:0;
+            padding:0;
+            list-style: none;
+            li{
+                margin-right: 1.25rem;
+                font-size: 1.125rem;
+                font-weight: 300;
+                cursor: pointer;
+            }
+        }
+        
+    }
+    .topRight{
+        flex:3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .search{
+            font-size: 1.6rem;
+            color:#666;
+            cursor: pointer; 
+            margin-left: 0.9375rem;
+        }
+
+        .topRightLink{
+            margin-right: 0.625rem;
+            font-family: "Josefin Sans", sans-serif;
+            font-weight: 300;
+            font-size: 1.125rem;
+        }
+    }
+}
