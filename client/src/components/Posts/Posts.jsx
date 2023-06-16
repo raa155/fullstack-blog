@@ -2,15 +2,13 @@ import React from 'react'
 import './Posts.scss';
 import Post from '../Post/Post';
 
-const Posts = () => {
+const Posts = ({posts}) => {
     return (
         <div className="posts">
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
+            {posts.map(post => (
+                <Post post={post} />
+            ))}
+
         </div>
     )
 }

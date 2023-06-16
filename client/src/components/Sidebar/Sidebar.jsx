@@ -23,10 +23,10 @@ const Sidebar = () => {
             <div className="sidebarItem">
                 <span className="sidebarTitle">Follow Us</span>
                 <div className="sidebarSocial">
-                    <i class="fa-brands fa-square-facebook"></i>
-                    <i class="fa-brands fa-square-twitter"></i>
-                    <i class="fa-brands fa-square-pinterest"></i>
-                    <i class="fa-brands fa-square-instagram"></i>
+                    <i className="fa-brands fa-square-facebook"></i>
+                    <i className="fa-brands fa-square-twitter"></i>
+                    <i className="fa-brands fa-square-pinterest"></i>
+                    <i className="fa-brands fa-square-instagram"></i>
                 </div>
             </div>
         </div>

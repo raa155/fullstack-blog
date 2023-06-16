@@ -1,24 +1,38 @@
-import React from 'react'
+// @ts-nocheck
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+import { useLocation } from 'react-router';
 import './SinglePost.scss';
 const SinglePost = () => {
+    const location = useLocation();
+    const path = location.pathname.split('/')[2];
+    const [post, setPost] = useState({});
+
+    useEffect(() => {
+        const getPost = async () => {
+            const response = await axios.get("/posts/" + path)
+            setPost(response.data)
+        }
+        getPost();
+    },[path])
     return (
         <div className="singlepost">
             <div className="singlePostWrapper">
-                <img src="https://images.unsplash.com/photo-1685648343835-39d65e57e153?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2327&q=80" alt="" />
-                <h1>Lorem ipsum dolor sit amet.
+                {post?.photo &&
+                    <img src={post?.photo} alt="" />
+                }
+                <h1>{post?.title}
                 <div className="singlePostEdit">
-                    <i class="singlePostIcon far fa-edit"></i>
-                    <i class="singlePostIcon far fa-trash-alt"></i>
+                    <i className="singlePostIcon far fa-edit"></i>
+                    <i className="singlePostIcon far fa-trash-alt"></i>
                 </div>
                 </h1>
                 <div className="singlePostInfo">
-                    <span className="author">Author: <b>Roman</b></span>
-                    <span className="date">1 hour ago</span>
+                    <span className="author">Author: <b>{post?.username}</b></span>
+                    <span className="date">{new Date(post.createdAt).toDateString()}</span>
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nam fugiat id, perspiciatis quas inventore adipisci, sed pariatur ipsum odio ad, laboriosam dignissimos ullam! Nemo eaque ab deleniti placeat recusandae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, eaque! Excepturi, id! Eum esse beatae assumenda nam quis, in doloribus eligendi vel ea repudiandae nemo libero saepe repellat magnam delectus! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, impedit! Nihil, iusto perspiciatis repudiandae illum, possimus iure, molestiae omnis libero tempore totam repellendus autem adipisci quod natus eos nemo voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum libero quas fugiat fugit illum consequuntur temporibus iure vitae minus ut dicta adipisci unde, consequatur aperiam ex. Nemo tempore iure iusto?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nam fugiat id, perspiciatis quas inventore adipisci, sed pariatur ipsum odio ad, laboriosam dignissimos ullam! Nemo eaque ab deleniti placeat recusandae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, eaque! Excepturi, id! Eum esse beatae assumenda nam quis, in doloribus eligendi vel ea repudiandae nemo libero saepe repellat magnam delectus! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, impedit! Nihil, iusto perspiciatis repudiandae illum, possimus iure, molestiae omnis libero tempore totam repellendus autem adipisci quod natus eos nemo voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum libero quas fugiat fugit illum consequuntur temporibus iure vitae minus ut dicta adipisci unde, consequatur aperiam ex. Nemo tempore iure iusto?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nam fugiat id, perspiciatis quas inventore adipisci, sed pariatur ipsum odio ad, laboriosam dignissimos ullam! Nemo eaque ab deleniti placeat recusandae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, eaque! Excepturi, id! Eum esse beatae assumenda nam quis, in doloribus eligendi vel ea repudiandae nemo libero saepe repellat magnam delectus! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, impedit! Nihil, iusto perspiciatis repudiandae illum, possimus iure, molestiae omnis libero tempore totam repellendus autem adipisci quod natus eos nemo voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum libero quas fugiat fugit illum consequuntur temporibus iure vitae minus ut dicta adipisci unde, consequatur aperiam ex. Nemo tempore iure iusto?
+                    {post.desc}
                 </p>
             </div>
         </div>

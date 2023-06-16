@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 import Topbar from "./components/Topbar/Topbar";
 import Home from "./pages/Home/Home";
 import Single from "./pages/Single/Single";
@@ -19,7 +21,7 @@ import {
 
 
 function App() {
-  const user = false;
+  const user = true;
 
   const Layout = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Topbar.scss';
 
-// Material UI Icons 
+// Material UI Icons
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 
@@ -12,10 +12,10 @@ const Topbar = () => {
     return (
         <div className="topBar">
             <div className="topLeft">
-                <i class="fa-brands fa-square-facebook topIcon"></i>
-                <i class="fa-brands fa-square-twitter topIcon"></i>
-                <i class="fa-brands fa-square-pinterest topIcon"></i>
-                <i class="fa-brands fa-square-instagram topIcon"></i>
+                <i className="fa-brands fa-square-facebook topIcon"></i>
+                <i className="fa-brands fa-square-twitter topIcon"></i>
+                <i className="fa-brands fa-square-pinterest topIcon"></i>
+                <i className="fa-brands fa-square-instagram topIcon"></i>
             </div>
             <div className="topCenter">
                 <ul className="topList">
