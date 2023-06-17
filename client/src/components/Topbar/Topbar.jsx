@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Topbar.scss';
 
 // Material UI Icons
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
+import { Context } from '../../context/Context';
 
 
 const Topbar = () => {
 
-    const user = true;
+    const { user, dispatch } = useContext(Context);
+
+    const handleLogout = () => {
+        dispatch({type:"LOGOUT"})
+    }
     return (
         <div className="topBar">
             <div className="topLeft">
@@ -26,14 +31,17 @@ const Topbar = () => {
                     <li><Link className="link" to="/">CONTACT</Link></li>
                     <li><Link className="link" to="/write">WRITE</Link></li>
                     <li>
-                        {user && <Link className="link" to="/">LOGOUT</Link>}
+                        {user && <Link className="link" to="/" onClick={handleLogout}>LOGOUT</Link>}
                     </li>
                 </ul>
             </div>
             <div className="topRight">
+
                 {
                     user ? (
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="" />
+                        <Link to="/account">
+                            <img src={user.profilePic} alt="" />
+                        </Link>
                     ) : (
                         <ul>
                             <Link className="link topRightLink" to="/login">LOGIN</Link>
@@ -41,6 +49,7 @@ const Topbar = () => {
                         </ul>
                     )
                 }
+
                 <SearchIcon className="search" />
 
             </div>

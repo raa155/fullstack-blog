@@ -3,6 +3,7 @@ const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const multer = require('multer');
+const path = require('path');
 
 // initialize routes
 const authRoute = require('./routes/auth');
@@ -15,6 +16,7 @@ dotenv.config();
 
 // allows us to send JSON objects through our express server
 app.use(express.json());
+app.use("/images", express.static(path.join(__dirname,"/images")))
 
 // Connect Mongo DB
 // @ts-ignore

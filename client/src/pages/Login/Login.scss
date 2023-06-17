@@ -16,7 +16,7 @@
         background-color: white;
         padding:1.25rem;
         border-radius: 0.625rem;
-        
+
         span{
         font-size: 3.125rem;
         text-align: center;
@@ -41,6 +41,10 @@
             color:white;
             border-radius: 0.625rem;
             padding:0.625rem;
+            &:disabled{
+                cursor: not-allowed;
+                background-color: grey;
+            }
         }
     }
     .loginRegisterButton{

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Topbar from "./components/Topbar/Topbar";
 import Home from "./pages/Home/Home";
@@ -15,13 +15,14 @@ import {
   Outlet,
   Navigate
 } from 'react-router-dom';
+import { Context } from './context/Context';
 
 
 
 
 
 function App() {
-  const user = true;
+  const {user} = useContext(Context)
 
   const Layout = () => {
   return (
